@@ -12,15 +12,17 @@
         if (isNaN(arguments[i]))
             typecheck = 1;
     if (typecheck==1)
-        document.write('<h3>숫자만 전달하세요</h3>');
-    else {
-        sum = 0;
-        for (i in arguments)
-            sum += Number(arguments[i]);
-        document.write('<h3>'+sum+'</h3>');
-        }
+        return '숫자만 전달하세요';
+    sum = 0;
+    for (i in arguments)
+        sum += Number(arguments[i]);
+    return sum;
     }
-calc(); calc(10, 20, '30'); calc(10, '가나다', 20); calc(1, 2, 3, 4, 5); calc('안녕하세요', 1, '반갑습니다', 100);
+document.write('<h3>'+calc()+'</h3>');
+document.write('<h3>'+calc(10, 20, '30')+'</h3>');
+document.write('<h3>'+calc(10, '가나다', 20)+'</h3>');
+document.write('<h3>'+calc(1, 2, 3, 4, 5)+'</h3>');
+document.write('<h3>'+calc('안녕하세요', 1, '반갑습니다', 100)+'</h3>');
 </script>
 </body>
 </html>
