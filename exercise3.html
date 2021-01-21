@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function calc() {
+    typecheck = 0;
+    for (i in arguments)
+        if (isNaN(arguments[i]))
+            typecheck = 1;
+    if (typecheck==1)
+        document.write('<h3>숫자만 전달하세요</h3>');
+    else {
+        sum = 0;
+        for (i in arguments)
+            sum += Number(arguments[i]);
+        document.write('<h3>'+sum+'</h3>');
+        }
+    }
+calc(); calc(10, 20, '30'); calc(10, '가나다', 20); calc(1, 2, 3, 4, 5); calc('안녕하세요', 1, '반갑습니다', 100);
+</script>
+</body>
+</html>
