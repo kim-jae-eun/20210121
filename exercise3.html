@@ -7,16 +7,16 @@
 <body>
 <script>
     function calc() {
-    typecheck = 0;
-    for (i in arguments)
-        if (isNaN(arguments[i]))
-            typecheck = 1;
-    if (typecheck==1)
-        return '숫자만 전달하세요';
-    sum = 0;
-    for (i in arguments)
-        sum += Number(arguments[i]);
-    return sum;
+        typecheck = 0;
+        for (i in arguments)
+            if (isNaN(arguments[i]))
+                typecheck = 1;
+        if (typecheck==1)
+            return '숫자만 전달하세요';
+        sum = 0;
+        for (i in arguments)
+            sum += Number(arguments[i]);
+        return sum;
     }
 document.write('<h3>'+calc()+'</h3>');
 document.write('<h3>'+calc(10, 20, '30')+'</h3>');
