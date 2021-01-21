@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function sum(p) {
+        if (typeof p == 'undefined'|| p==0)
+            return;
+        else {
+            psum=0;
+            for (var i=1; i<=p; i++)
+                psum+=i;
+            return psum;
+        }
+    }
+    var num = Math.floor(Math.random()*6);
+    if (num==0) {
+        sum();
+        document.write('<h3>결과값이 없어요!!!</h3>');
+    }
+    else
+        document.write('<h2>호출 결과값 : ' + sum(num) + '</h2>');
+</script>
+</body>
+</html>
