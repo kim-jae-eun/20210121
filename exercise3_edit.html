@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function calc() {
+        var typecheck = 0;
+        for (i in arguments)
+            if (isNaN(arguments[i]))
+                typecheck = 1;
+        if (typecheck == 1)
+            return '숫자만 전달하세요';
+        else if (arguments.length==0)
+            return 0;
+        else {
+            var mult = 1;
+            for (i in arguments)
+                mult *= arguments[i];
+            return mult;
+        }
+    }
+document.write('<h3>'+calc()+'</h3>');
+document.write('<h3>'+calc(10, 20, '30')+'</h3>');
+document.write('<h3>'+calc(10, '가나다', 20)+'</h3>');
+document.write('<h3>'+calc(1, 2, 3, 4, 5)+'</h3>');
+document.write('<h3>'+calc('안녕하세요', 1, '반갑습니다', 100)+'</h3>');
+</script>
+</body>
+</html>
